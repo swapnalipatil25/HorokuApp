@@ -18,6 +18,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.black.cgColor
     }
 
     @IBAction func btnAddToCartAction(_ sender: AnyObject) {

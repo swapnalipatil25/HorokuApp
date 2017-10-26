@@ -20,6 +20,12 @@
 		321EA9E31FA257D2009B454F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9D31FA257D2009B454F /* ShadowView.swift */; };
 		321EA9E41FA257D2009B454F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321EA9D51FA257D2009B454F /* LaunchScreen.storyboard */; };
 		321EA9E51FA257D2009B454F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321EA9D71FA257D2009B454F /* Main.storyboard */; };
+		321EA9E71FA25FCF009B454F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9E61FA25FCF009B454F /* Constant.swift */; };
+		321EA9E91FA26086009B454F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9E81FA26086009B454F /* APIService.swift */; };
+		321EA9EB1FA2617C009B454F /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9EA1FA2617C009B454F /* Products.swift */; };
+		321EA9ED1FA275F9009B454F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9EC1FA275F9009B454F /* LoaderView.swift */; };
+		321EA9EF1FA27629009B454F /* LoaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321EA9EE1FA27629009B454F /* LoaderView.xib */; };
+		3C30B20DD79F4198BBA8E3D5 /* Pods_HorokuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF407B1624155452079F81B1 /* Pods_HorokuApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,14 @@
 		321EA9D31FA257D2009B454F /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		321EA9D61FA257D2009B454F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		321EA9D81FA257D2009B454F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		321EA9E61FA25FCF009B454F /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		321EA9E81FA26086009B454F /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		321EA9EA1FA2617C009B454F /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		321EA9EC1FA275F9009B454F /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		321EA9EE1FA27629009B454F /* LoaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoaderView.xib; sourceTree = "<group>"; };
+		427733C54D02D4A91250647A /* Pods-HorokuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HorokuApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HorokuApp/Pods-HorokuApp.release.xcconfig"; sourceTree = "<group>"; };
+		61BFB7245934487EADD2144A /* Pods-HorokuApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HorokuApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HorokuApp/Pods-HorokuApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AF407B1624155452079F81B1 /* Pods_HorokuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HorokuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C30B20DD79F4198BBA8E3D5 /* Pods_HorokuApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,8 @@
 				321EA9D41FA257D2009B454F /* View */,
 				321EA9CF1FA257D2009B454F /* Info.plist */,
 				321EA9AE1FA2543C009B454F /* Products */,
+				C15C972DE95EE557847D68CD /* Pods */,
+				57DCCCA886E3358BC0A11E86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +140,10 @@
 		321EA9D01FA257D2009B454F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				321EA9E61FA25FCF009B454F /* Constant.swift */,
+				321EA9E81FA26086009B454F /* APIService.swift */,
+				321EA9EA1FA2617C009B454F /* Products.swift */,
+				321EA9EC1FA275F9009B454F /* LoaderView.swift */,
 			);
 			name = Model;
 			path = HorokuApp/Model;
@@ -143,9 +164,27 @@
 			children = (
 				321EA9D51FA257D2009B454F /* LaunchScreen.storyboard */,
 				321EA9D71FA257D2009B454F /* Main.storyboard */,
+				321EA9EE1FA27629009B454F /* LoaderView.xib */,
 			);
 			name = View;
 			path = HorokuApp/View;
+			sourceTree = "<group>";
+		};
+		57DCCCA886E3358BC0A11E86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF407B1624155452079F81B1 /* Pods_HorokuApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C15C972DE95EE557847D68CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61BFB7245934487EADD2144A /* Pods-HorokuApp.debug.xcconfig */,
+				427733C54D02D4A91250647A /* Pods-HorokuApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 321EA9BF1FA2543C009B454F /* Build configuration list for PBXNativeTarget "HorokuApp" */;
 			buildPhases = (
+				57587AF1CCC9BB84593F9FAA /* [CP] Check Pods Manifest.lock */,
 				321EA9A91FA2543C009B454F /* Sources */,
 				321EA9AA1FA2543C009B454F /* Frameworks */,
 				321EA9AB1FA2543C009B454F /* Resources */,
+				62C41ADFBD6F94BA78DEF7C8 /* [CP] Embed Pods Frameworks */,
+				5979C9D56202BC1BA5D78FC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321EA9EF1FA27629009B454F /* LoaderView.xib in Resources */,
 				321EA9E11FA257D2009B454F /* Info.plist in Resources */,
 				321EA9DE1FA257D2009B454F /* ProductCollectionViewCell.xib in Resources */,
 				321EA9E01FA257D2009B454F /* Assets.xcassets in Resources */,
@@ -218,17 +261,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		57587AF1CCC9BB84593F9FAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5979C9D56202BC1BA5D78FC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HorokuApp/Pods-HorokuApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62C41ADFBD6F94BA78DEF7C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HorokuApp/Pods-HorokuApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		321EA9A91FA2543C009B454F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				321EA9DB1FA257D2009B454F /* CartTableViewCell.swift in Sources */,
+				321EA9ED1FA275F9009B454F /* LoaderView.swift in Sources */,
 				321EA9DA1FA257D2009B454F /* CartListViewController.swift in Sources */,
 				321EA9E21FA257D2009B454F /* CustomButton.swift in Sources */,
+				321EA9E71FA25FCF009B454F /* Constant.swift in Sources */,
 				321EA9DF1FA257D2009B454F /* ProductListViewController.swift in Sources */,
 				321EA9DD1FA257D2009B454F /* ProductCollectionViewCell.swift in Sources */,
 				321EA9D91FA257D2009B454F /* AppDelegate.swift in Sources */,
+				321EA9EB1FA2617C009B454F /* Products.swift in Sources */,
+				321EA9E91FA26086009B454F /* APIService.swift in Sources */,
 				321EA9E31FA257D2009B454F /* ShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +443,7 @@
 		};
 		321EA9C01FA2543C009B454F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61BFB7245934487EADD2144A /* Pods-HorokuApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HorokuApp/Info.plist;
@@ -360,6 +456,7 @@
 		};
 		321EA9C11FA2543C009B454F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 427733C54D02D4A91250647A /* Pods-HorokuApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HorokuApp/Info.plist;
@@ -389,6 +486,7 @@
 				321EA9C11FA2543C009B454F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

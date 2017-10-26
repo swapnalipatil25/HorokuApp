@@ -11,7 +11,7 @@ import UIKit
 class ProductListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var arrayProductList = [Products]()
     fileprivate let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
     let collectionMargin = CGFloat(0)
     let itemSpacing = CGFloat(10)
@@ -26,6 +26,8 @@ class ProductListViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.isTranslucent = false
         self.setupCollectionView()
+        
+        self.callProductList_API()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +56,25 @@ class ProductListViewController: UIViewController {
         
         collectionView!.collectionViewLayout = layout
         collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+    }
+    
+    func callProductList_API()  {
+        
+        Constant.HelperMethods.showActivityIndicatory(label: "Fetching Products...")
+//        APIService.getProductList( completion: { jsonString in
+//            // and here you get the "returned" value from the asynchronous task
+//            print(jsonString)
+//            
+//            Constant.HelperMethods.hideActivityIndicatory()
+//
+//        })
+        
+        
+        APIService.getProductList { (products) in
+            self.arrayProductList = products
+            print(products)
+
+        }
     }
 }
 
