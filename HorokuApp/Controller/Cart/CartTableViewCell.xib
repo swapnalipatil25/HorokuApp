@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="149" id="KGk-i7-Jjw" customClass="CartTableViewCell" customModule="HorokuApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="149"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myC-QL-Ttz">
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="62q-bv-OeW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="QGw-V6-QRD"/>
+                                    <constraint firstAttribute="height" constant="58" id="ml0-H6-4Xv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price 100$" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqf-6n-EKY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="G4X-1v-3jH"/>
+                                    <constraint firstAttribute="width" constant="42" id="Rpf-A7-v5o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahx-5w-gs0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="DSd-GS-3Wi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW6-8y-9E0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="81w-Sp-f9X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NDs-ON-V1F">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWK-lM-q4U" customClass="CustomButton" customModule="HorokuApp" customModuleProvider="target">
+                                        <state key="normal" title="Call Vendor"/>
+                                        <connections>
+                                            <action selector="btnCallVendorAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LdO-yW-6Ng"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5A-p0-Fwr" customClass="CustomButton" customModule="HorokuApp" customModuleProvider="target">
+                                        <state key="normal" title="Remove from Cart"/>
+                                        <connections>
+                                            <action selector="btnRemoveFromCartAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RoP-io-RWS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4AA-d3-uHV"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrh-dA-ceL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5vD-9i-8hN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uqf-6n-EKY" firstAttribute="top" secondItem="myC-QL-Ttz" secondAttribute="top" constant="12" id="2yH-eu-X8R"/>
+                            <constraint firstItem="RW6-8y-9E0" firstAttribute="top" secondItem="myC-QL-Ttz" secondAttribute="top" constant="32" id="3sX-F1-aco"/>
+                            <constraint firstItem="62q-bv-OeW" firstAttribute="leading" secondItem="myC-QL-Ttz" secondAttribute="leading" constant="8" id="7fp-I6-Ykv"/>
+                            <constraint firstItem="Jrh-dA-ceL" firstAttribute="leading" secondItem="62q-bv-OeW" secondAttribute="trailing" constant="8" id="CQL-72-WOG"/>
+                            <constraint firstItem="Uqf-6n-EKY" firstAttribute="leading" secondItem="ahx-5w-gs0" secondAttribute="trailing" constant="8" id="FJJ-kW-hbC"/>
+                            <constraint firstItem="ahx-5w-gs0" firstAttribute="leading" secondItem="62q-bv-OeW" secondAttribute="trailing" constant="8" id="HQs-P0-Ntw"/>
+                            <constraint firstAttribute="trailing" secondItem="Uqf-6n-EKY" secondAttribute="trailing" constant="8" id="LQb-dR-ssv"/>
+                            <constraint firstItem="RW6-8y-9E0" firstAttribute="leading" secondItem="62q-bv-OeW" secondAttribute="trailing" constant="8" id="Orz-0S-yPY"/>
+                            <constraint firstItem="62q-bv-OeW" firstAttribute="top" secondItem="myC-QL-Ttz" secondAttribute="top" constant="13" id="RCa-pN-Y0H"/>
+                            <constraint firstItem="NDs-ON-V1F" firstAttribute="top" secondItem="Jrh-dA-ceL" secondAttribute="bottom" constant="15" id="ScH-HL-usM"/>
+                            <constraint firstItem="ahx-5w-gs0" firstAttribute="top" secondItem="myC-QL-Ttz" secondAttribute="top" constant="13" id="fg7-la-2I8"/>
+                            <constraint firstItem="Uqf-6n-EKY" firstAttribute="leading" secondItem="RW6-8y-9E0" secondAttribute="trailing" constant="8" id="l2l-xp-vgh"/>
+                            <constraint firstItem="NDs-ON-V1F" firstAttribute="leading" secondItem="myC-QL-Ttz" secondAttribute="leading" constant="8" id="mRk-vk-0qn"/>
+                            <constraint firstItem="Uqf-6n-EKY" firstAttribute="leading" secondItem="Jrh-dA-ceL" secondAttribute="trailing" constant="8" id="njx-6Q-UTP"/>
+                            <constraint firstAttribute="trailing" secondItem="NDs-ON-V1F" secondAttribute="trailing" constant="8" id="pSS-mF-m2k"/>
+                            <constraint firstItem="Jrh-dA-ceL" firstAttribute="top" secondItem="ahx-5w-gs0" secondAttribute="bottom" constant="16" id="sxG-LV-y8Q"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="myC-QL-Ttz" secondAttribute="trailing" constant="12" id="4sT-jJ-4z3"/>
+                    <constraint firstItem="myC-QL-Ttz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="6wb-dP-Qoq"/>
+                    <constraint firstAttribute="bottom" secondItem="myC-QL-Ttz" secondAttribute="bottom" constant="12" id="7zQ-WK-Drr"/>
+                    <constraint firstItem="myC-QL-Ttz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="lqR-19-L4i"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgViewProductThumbnail" destination="62q-bv-OeW" id="0RR-wE-oeE"/>
+                <outlet property="lblProductPrice" destination="Uqf-6n-EKY" id="Obh-HE-XPx"/>
+                <outlet property="lblProductTitle" destination="ahx-5w-gs0" id="6TQ-jK-dva"/>
+                <outlet property="lblVendorAddress" destination="Jrh-dA-ceL" id="L9q-7m-J4a"/>
+                <outlet property="lblVendorName" destination="RW6-8y-9E0" id="4wV-9C-7j2"/>
+                <outlet property="viewContainer" destination="myC-QL-Ttz" id="iN3-jB-KVu"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="160"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Placeholder" width="218" height="163"/>
+    </resources>
+</document>
