@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Toast_Swift
+
+let APP_DELEGATE = UIApplication.shared.delegate as! AppDelegate
 
 class Constant: NSObject {
     struct Horoku_API {
@@ -19,6 +22,7 @@ class Constant: NSObject {
         
         static let keyWindow = (UIApplication.shared.delegate as? AppDelegate)?.window
         
+        //HUD METHODS
         static func showActivityIndicatory(label: String) {
             loaderView = UINib(nibName: "LoaderView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? LoaderView
             loaderView.frame = UIScreen.main.bounds
@@ -27,7 +31,35 @@ class Constant: NSObject {
         }
         
         static func hideActivityIndicatory() {
-            loaderView.removeFromSuperview()
+            DispatchQueue.main.async {
+                loaderView.removeFromSuperview()
+            }
+            
+        }
+        
+        
+        //CALL ACTION
+        static func btnCallAction(strPhoneNo : String)  {
+            var mobileNumber = strPhoneNo
+            mobileNumber = mobileNumber.replacingOccurrences(of: " ", with: "")
+            guard let number = URL(string: "tel:\(mobileNumber)") else { return }
+            if #available(iOS 10.0, *)
+            {
+                UIApplication.shared.open(number)
+            }
+            else
+            {
+                // Fallback on earlier versions
+                UIApplication.shared.openURL(number)
+            }
+        }
+        
+        
+        static func showToast(viewToast : UIView,message : String)
+        {
+            var style = ToastStyle()
+            style.messageColor = .white
+            viewToast.makeToast(message, duration: 2.0, position: .center, style: style)
         }
     }
 }

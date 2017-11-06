@@ -11,7 +11,7 @@ import UIKit
 class APIService: NSObject {
     
 //    static func getProductList(completion:  @escaping (String) -> ()) {
-    static func getProductList(completion:  @escaping (_  : [Products]) -> ()) {
+    static func getProductList(completion:  @escaping (_  : [Product]) -> ()) {
         let searchURL = Constant.Horoku_API.base_URL
 
         if let url = URL(string: searchURL) {
@@ -24,20 +24,16 @@ class APIService: NSObject {
                     print("error while fetching data")
                     return
                 }
-                
-                
-                if let apiJSON = jsonData as? [String: Any], let products = apiJSON["products"] as? [String: Any]
+                var arrayProducts  = [Product]()
+                if let apiJSON = (jsonData as AnyObject).object(forKey: "products") as? [[String:AnyObject]]
+                    
                 {
-                    completion(products.map({_,_ in Products.init(jsonData: products)}))
+                    for oneProduct in apiJSON {
+                        let product =  ProductManager().createProductObject(response: oneProduct)
+                        arrayProducts.append(product)
+                    }
                 }
-                
-                
-                
-//                if let data = data, let jsonString = String(data: data, encoding: String.Encoding.utf8), error == nil {
-//                    completion(jsonString)
-//                } else {
-//                    print("error=\(error!.localizedDescription)")
-//                }
+                completion(arrayProducts)
             }
             task.resume()
         }

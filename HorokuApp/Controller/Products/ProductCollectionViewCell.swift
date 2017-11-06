@@ -8,13 +8,22 @@
 
 import UIKit
 
+protocol AddToCartDelegate: NSObjectProtocol{
+    func btnAddToCartAction()
+}
+
 class ProductCollectionViewCell: UICollectionViewCell {
 
+    var delegate:AddToCartDelegate!
+    
     @IBOutlet weak var imgViewProductHeader: UIImageView!
     @IBOutlet weak var lblProductTitle: UILabel!
     @IBOutlet weak var lblProductPrice: UILabel!
     @IBOutlet weak var lblVendorAddress: UILabel!
     @IBOutlet weak var lblVenderName: UILabel!
+    @IBOutlet weak var btnAddToCart: UIButton!
+    var product :Product? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +33,13 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func btnAddToCartAction(_ sender: AnyObject) {
+        DispatchQueue.main.async {
+            ProductManager().updateProduct(productName: self.product!, isAddedToCart: true)
+            
+            Constant.HelperMethods.showToast(viewToast: APP_DELEGATE.window!, message: "Added to cart")
+            
+            self.btnAddToCart.isEnabled = false
+
+        }
     }
 }

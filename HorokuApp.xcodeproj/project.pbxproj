@@ -22,9 +22,9 @@
 		321EA9E51FA257D2009B454F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321EA9D71FA257D2009B454F /* Main.storyboard */; };
 		321EA9E71FA25FCF009B454F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9E61FA25FCF009B454F /* Constant.swift */; };
 		321EA9E91FA26086009B454F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9E81FA26086009B454F /* APIService.swift */; };
-		321EA9EB1FA2617C009B454F /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9EA1FA2617C009B454F /* Products.swift */; };
 		321EA9ED1FA275F9009B454F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9EC1FA275F9009B454F /* LoaderView.swift */; };
 		321EA9EF1FA27629009B454F /* LoaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321EA9EE1FA27629009B454F /* LoaderView.xib */; };
+		321EA9F11FB0EBA5009B454F /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EA9F01FB0EBA5009B454F /* ProductManager.swift */; };
 		3C30B20DD79F4198BBA8E3D5 /* Pods_HorokuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF407B1624155452079F81B1 /* Pods_HorokuApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +45,9 @@
 		321EA9D81FA257D2009B454F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		321EA9E61FA25FCF009B454F /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		321EA9E81FA26086009B454F /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		321EA9EA1FA2617C009B454F /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		321EA9EC1FA275F9009B454F /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		321EA9EE1FA27629009B454F /* LoaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoaderView.xib; sourceTree = "<group>"; };
+		321EA9F01FB0EBA5009B454F /* ProductManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		427733C54D02D4A91250647A /* Pods-HorokuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HorokuApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HorokuApp/Pods-HorokuApp.release.xcconfig"; sourceTree = "<group>"; };
 		61BFB7245934487EADD2144A /* Pods-HorokuApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HorokuApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HorokuApp/Pods-HorokuApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AF407B1624155452079F81B1 /* Pods_HorokuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HorokuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,9 +140,9 @@
 		321EA9D01FA257D2009B454F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				321EA9F01FB0EBA5009B454F /* ProductManager.swift */,
 				321EA9E61FA25FCF009B454F /* Constant.swift */,
 				321EA9E81FA26086009B454F /* APIService.swift */,
-				321EA9EA1FA2617C009B454F /* Products.swift */,
 				321EA9EC1FA275F9009B454F /* LoaderView.swift */,
 			);
 			name = Model;
@@ -315,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				321EA9DB1FA257D2009B454F /* CartTableViewCell.swift in Sources */,
+				321EA9F11FB0EBA5009B454F /* ProductManager.swift in Sources */,
 				321EA9ED1FA275F9009B454F /* LoaderView.swift in Sources */,
 				321EA9DA1FA257D2009B454F /* CartListViewController.swift in Sources */,
 				321EA9E21FA257D2009B454F /* CustomButton.swift in Sources */,
@@ -322,7 +323,6 @@
 				321EA9DF1FA257D2009B454F /* ProductListViewController.swift in Sources */,
 				321EA9DD1FA257D2009B454F /* ProductCollectionViewCell.swift in Sources */,
 				321EA9D91FA257D2009B454F /* AppDelegate.swift in Sources */,
-				321EA9EB1FA2617C009B454F /* Products.swift in Sources */,
 				321EA9E91FA26086009B454F /* APIService.swift in Sources */,
 				321EA9E31FA257D2009B454F /* ShadowView.swift in Sources */,
 			);

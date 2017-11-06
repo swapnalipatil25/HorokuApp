@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol RemoveFromCartDelegate: NSObjectProtocol{
+    func btnRemoveFromCartAction()
+}
+
 class CartTableViewCell: UITableViewCell {
 
     @IBOutlet weak var viewContainer: UIView!
@@ -16,6 +20,10 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var lblProductPrice: UILabel!
     @IBOutlet weak var lblVendorName: UILabel!
     @IBOutlet weak var lblVendorAddress: UILabel!
+    
+    var delegate : RemoveFromCartDelegate!
+    
+    var product :Product? = nil
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,7 +38,14 @@ class CartTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnCallVendorAction(_ sender: AnyObject) {
+        Constant.HelperMethods.btnCallAction(strPhoneNo: (product?.phoneNumber)!)
+        
     }
     @IBAction func btnRemoveFromCartAction(_ sender: AnyObject) {
+         ProductManager().updateProduct(productName: product!, isAddedToCart: false)
+        Constant.HelperMethods.showToast(viewToast: APP_DELEGATE.window!, message: "Removed from cart")
+        
+        // call delegate here
+        self.delegate.btnRemoveFromCartAction()
     }
 }

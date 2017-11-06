@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class ProductListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var arrayProductList = [Products]()
+    var arrayProductList = [Product]()
     fileprivate let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
     let collectionMargin = CGFloat(0)
     let itemSpacing = CGFloat(10)
@@ -24,10 +26,22 @@ class ProductListViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationController?.navigationBar.isTranslucent = false
         self.setupCollectionView()
-        
         self.callProductList_API()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.updateData()
+        
+    }
+    
+    func updateData()
+    {
+        self.arrayProductList = []
+        self.arrayProductList = ProductManager().getAllProductsObject()
+        self.collectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +50,9 @@ class ProductListViewController: UIViewController {
     }
     
     func setupCollectionView() {
-        
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.tabBarController?.tabBar.isTranslucent = false
+
         self.collectionView.register(UINib.init(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         
         
@@ -61,19 +77,10 @@ class ProductListViewController: UIViewController {
     func callProductList_API()  {
         
         Constant.HelperMethods.showActivityIndicatory(label: "Fetching Products...")
-//        APIService.getProductList( completion: { jsonString in
-//            // and here you get the "returned" value from the asynchronous task
-//            print(jsonString)
-//            
-//            Constant.HelperMethods.hideActivityIndicatory()
-//
-//        })
-        
-        
         APIService.getProductList { (products) in
             self.arrayProductList = products
-            print(products)
-
+                self.collectionView.reloadData()
+                Constant.HelperMethods.hideActivityIndicatory()
         }
     }
 }
@@ -83,19 +90,40 @@ class ProductListViewController: UIViewController {
 extension ProductListViewController : UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return self.arrayProductList.count
     }
     
-    
-    
-    // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ProductCollectionViewCell
+        let oneProduct = self.arrayProductList[indexPath.row] as Product
         
-        cell.backgroundColor = UIColor.clear
+        cell.lblVenderName.text = oneProduct.vendorName
+        cell.lblProductPrice.text = String(oneProduct.price)
+        cell.lblProductTitle.text = oneProduct.productName
+        cell.lblVendorAddress.text = oneProduct.vendorAddress
+        
+        if oneProduct.isAddedToCart
+        {
+            cell.btnAddToCart.isEnabled = false
+        }
+        else
+        {
+            cell.btnAddToCart.isEnabled = true
+        }
+        
+        
+        cell.product = oneProduct
+        cell.delegate = self
+        let imgURL  =   NSURL(string: (oneProduct.productImage) )
+        cell.imgViewProductHeader.sd_setImage(with: imgURL as URL?  , placeholderImage: #imageLiteral(resourceName: "Placeholder"), options: SDWebImageOptions.highPriority, completed: nil)
         return cell
     }
-    
-    
+}
+
+extension ProductListViewController : AddToCartDelegate
+{
+    func btnAddToCartAction()
+    {
+        self.updateData()
+    }
 }
